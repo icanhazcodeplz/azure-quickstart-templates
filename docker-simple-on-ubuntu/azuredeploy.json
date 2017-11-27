@@ -35,7 +35,7 @@
     },
     "ubuntuOSVersion": {
       "type": "string",
-      "defaultValue": "14.04.4-LTS",
+      "defaultValue": "16.04.0-LTS",
       "metadata": {
         "description": "The Ubuntu version for deploying the Docker containers. This will pick a fully patched image of this given Ubuntu version. Allowed values: 14.04.4-LTS, 15.10, 16.04.0-LTS"
       },
@@ -50,17 +50,17 @@
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
     "OSDiskName": "osdiskfordockersimple",
-    "nicName": "myVMNicD",
+    "nicName": "fivestarVMNicD",
     "extensionName": "DockerExtension",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "storageAccountType": "Standard_LRS",
-    "publicIPAddressName": "myPublicIPD",
+    "publicIPAddressName": "fivestarPublicIPD",
     "publicIPAddressType": "Dynamic",
     "vmStorageAccountContainerName": "vhds",
-    "vmName": "MyDockerVM",
-    "virtualNetworkName": "MyVNETD",
+    "vmName": "fivestarVM",
+    "virtualNetworkName": "fivestarVNET",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]"
   },
@@ -188,7 +188,7 @@
       "properties": {
         "publisher": "Microsoft.Azure.Extensions",
         "type": "DockerExtension",
-        "typeHandlerVersion": "1.0",
+        "typeHandlerVersion": "1.*",
         "autoUpgradeMinorVersion": true,
         "settings": { }
       }
